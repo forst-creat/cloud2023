@@ -11,7 +11,9 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.swing.event.TreeSelectionListener;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * ClassName: PaymentController
@@ -68,8 +70,24 @@ public class PaymentController {
         return this.discoveryClient;
     }
 
+    /**
+     * 测试手写轮询算法
+     *
+     * @return
+     */
     @GetMapping(value = "/payment/lb")
     public String getPaymentLB() {
+        return serverPort;
+    }
+
+    @GetMapping("/payment/feign/timeout")
+    public String paymentFeignTimeOut() {
+        try {
+            //暂停3秒钟实现超时
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return serverPort;
     }
 
