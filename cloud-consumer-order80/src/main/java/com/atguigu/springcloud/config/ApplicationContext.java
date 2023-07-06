@@ -16,7 +16,8 @@ import org.springframework.web.client.RestTemplate;
 public class ApplicationContext {
 
     @Bean
-    @LoadBalanced
+    //去除Rabbion中@LoadBalanced注解，用自己实现的负载均衡之轮询机制
+    //@LoadBalanced
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
