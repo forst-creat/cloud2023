@@ -72,6 +72,7 @@ public class PaymentController {
 
     /**
      * 测试手写轮询算法
+     * 消费者cloud-consumer-order80访问
      *
      * @return
      */
