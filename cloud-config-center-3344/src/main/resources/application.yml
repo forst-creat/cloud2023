@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name:  cloud-config-center #注册进Eureka服务器的微服务名
+    name: cloud-config-center #注册进Eureka服务器的微服务名
   cloud:
     config:
       server:
@@ -17,6 +17,9 @@ spring:
 
 #服务注册到eureka地址
 eureka:
+  instance:
+    instance-id: config-center-3344
+    prefer-ip-address: true
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka
