@@ -1,4 +1,4 @@
-package com.atguigu.springcloud.service.serviceImpl;
+package com.atguigu.springcloud.service.impl;
 
 import cn.hutool.core.util.IdUtil;
 import com.atguigu.springcloud.service.PaymentService;
